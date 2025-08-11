@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Абдурахмон Гаджибаев: Серийный убийца на свободе</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 10px 0;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .date {
+                font-size: 12px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links li {
+                margin-right: 0;
+                text-align: center;
+            }
+            
+            .breaking-news-content {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .main-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .article {
+                flex: 1;
+            }
+            
+            .article-title {
+                font-size: 22px;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 5px;
+                font-size: 12px;
+            }
+            
+            .victim-display {
+                height: 50px;
+                font-size: 18px;
+            }
+            
+            .victim-item {
+                padding: 10px;
+            }
+            
+            .victim-name {
+                font-size: 16px;
+            }
+            
+            .sidebar {
+                flex: 1;
+            }
+            
+            .sidebar-widget {
+                margin-bottom: 15px;
+            }
+            
+            .widget-content {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            .methods-list {
+                padding-left: 15px;
+            }
+            
+            .footer {
+                padding: 20px 0;
+                margin-top: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .article-title {
+                font-size: 18px;
+            }
+            
+            .victim-display {
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .victim-name {
+                font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .article-content {
+                font-size: 14px;
+            }
+            
+            .breaking-news-content {
+                font-size: 12px;
+            }
+        }
+        
+        .header {
+            background: linear-gradient(to bottom, #003366, #001a33);
+            color: white;
+            padding: 15px 0;
+            border-bottom: 3px solid #cc0000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        
+        .logo span {
+            color: white;
+        }
+        
+        .date {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .navigation {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-right: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .breaking-news {
+            background-color: #cc0000;
+            color: white;
+            padding: 8px 0;
+            font-weight: bold;
+        }
+        
+        .breaking-news-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .breaking-label {
+            background-color: #ff0000;
+            padding: 3px 10px;
+            margin-right: 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .article {
+            flex: 2;
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 5px solid #003366;
+        }
+        
+        .article-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .article-title {
+            font-size: 28px;
+            color: #003366;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .article-image {
+            width: 100%;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        .article-content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            color: #003366;
+            font-size: 20px;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffcc00;
+        }
+        
+        .victim-list {
+            list-style-type: none;
+        }
+        
+        .victim-item {
+            background-color: #f9f9f9;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-left: 4px solid #333333;
+        }
+        
+        .victim-name {
+            font-weight: bold;
+            color: #333333;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .sidebar {
+            flex: 1;
+        }
+        
+        .sidebar-widget {
+            background-color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .widget-header {
+            background-color: #003366;
+            color: white;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .widget-content {
+            padding: 15px;
+        }
+        
+        .methods-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        .methods-list li {
+            margin-bottom: 10px;
+        }
+        
+        .warning-box {
+            background-color: #fff3f3;
+            border: 2px solid #cc0000;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .warning-title {
+            color: #cc0000;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .warning-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .phone-number {
+            font-size: 24px;
+            color: #003366;
+            font-weight: bold;
+        }
+        
+        .victim-display-container {
+            background-color: white;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .victim-display-title {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .victim-display {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid #003366;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        
+        .eliminated {
+            background-color: #cc0000;
+            color: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">НОВОСТИ<span>.RU</span></div>
+            <div class="date">Среда, 15 марта 2023 года</div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Политика</a></li>
+                <li><a href="#">Экономика</a></li>
+                <li><a href="#">Происшествия</a></li>
+                <li><a href="#">Спорт</a></li>
+                <li><a href="#">Культура</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="breaking-news">
+        <div class="breaking-news-content">
+            <div class="breaking-label">Экстренно</div>
+            <div>Полиция ищет опасного серийного убийцу. Если вы видели этого человека - немедленно сообщите в полицию!</div>
+        </div>
+            </div>
+            
+    <div class="main-content">
+        <div class="article">
+            <div class="article-header">
+                <h1 class="article-title">Абдурахмон Гаджибаев: Серийный убийца на свободе. Полиция ищет опасного преступника</h1>
+                <div class="article-meta">
+                    <span>Автор: Иван Иванов</span>
+                    <span>15:45</span>
+                    <span>124 комментария</span>
+                </div>
+            </div>
+            
+            <div class="article-image">
+                <img src="./gadzhiev.jpg" alt="Абдурахмон Гаджибаев" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkZvdG8gbmV0IHVuZGVmaW5lPC90ZXh0Pjwvc3ZnPg=='">
+                <div class="image-caption">Абдурахмон Гаджибаев - разыскивается полицией</div>
+            </div>
+            
+            <div class="article-content">
+                <p><strong>Специальный репортаж</strong> - Абдурахмон Гаджибаев, 38 лет, разыскивается полицией по подозрению в совершении серии убийств на территории страны. По последним данным, преступник находится в розыске с марта 2023 года.</p>
+                
+                <p>Гаджибаев родился в 1985 году в семье скромного фермера. С ранних лет проявлял склонность к агрессии и насилию. В 2003 году уехал в крупный город, где начал свою преступную карьеру.</p>
+                
+                <div class="victim-display-container">
+                    <div class="victim-display-title">Список жертв (обновляется в реальном времени)</div>
+                    <div class="victim-display">
+                        <div id="victim-name">Иван Петров</div>
+                    </div>
+            </div>
+            
+                <h2 class="section-title">Известные жертвы преступника</h2>
+                
+                <ul class="victim-list">
+                    <li class="victim-item">
+                        <div class="victim-name">Иван Петров, 34 года</div>
+                        <div>Бухгалтер. Найден мертвым в своем офисе в 2015 году. Причина смерти - множественные ножевые ранения.</div>
+                    </li>
+                    <li class="victim-item">
+                        <div class="victim-name">Мария Сидорова, 28 лет</div>
+                        <div>Учительница. Исчезла в 2016 году. Позже были найдены останки в лесу. Причина смерти - удушение.</div>
+                    </li>
+                    <li class="victim-item">
+                        <div class="victim-name">Александр Кузнецов, 42 года</div>
+                        <div>Таксист. Найден в своей машине с перерезанным горлом в 2017 году.</div>
+                    </li>
+                    <li class="victim-item">
+                        <div class="victim-name">Елена Волкова, 31 год</div>
+                        <div>Медсестра. Пропала без вести в 2018 году. Тело найдено в подвале старого здания.</div>
+                    </li>
+                    <li class="victim-item">
+                        <div class="victim-name">Дмитрий Морозов, 39 лет</div>
+                        <div>Программист. Найден мертвым у себя дома в 2019 году. Причина смерти - отравление.</div>
+                    </li>
+                </ul>
+                
+                <h2 class="section-title">Методы преступника</h2>
+                
+                <p>По данным следствия, Гаджибаев использует различные методы для устранения своих жертв:</p>
+                
+                <ul class="methods-list">
+                    <li>Холодное оружие - его основной метод убийства</li>
+                    <li>Отравление различными химическими веществами</li>
+                    <li>Удушение различными способами</li>
+                    <li>Использование взрывных устройств (в отдельных случаях)</li>
+                </ul>
+                
+
+                
+                <p>Полиция призывает граждан быть бдительными и сообщать о любых подозрительных лицах в правоохранительные органы. Гаджибаев может быть вооружен и крайне опасен.</p>
+            </div>
+            </div>
+            
+        <div class="sidebar">
+            <div class="sidebar-widget">
+                <div class="widget-header">Последние новости</div>
+                <div class="widget-content">
+                    <p><strong>14:30</strong> - В центре города задержана группа подозреваемых в кражах</p>
+                    <p><strong>13:15</strong> - На трассе М5 произошло ДТП с участием трех автомобилей</p>
+                    <p><strong>12:45</strong> - В школе №15 прошли учения по эвакуации населения</p>
+                    <p><strong>11:20</strong> - Метеорологи предупреждают о надвигающемся шторме</p>
+                </div>
+            </div>
+            
+            <div class="sidebar-widget">
+                <div class="widget-header">Фото дня</div>
+                <div class="widget-content">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkZvdG8gbmV0IHVuZGVmaW5lPC90ZXh0Pjwvc3ZnPg==" alt="Фото дня" style="width: 100%; height: auto;">
+                </div>
+            </div>
+            
+            <div class="sidebar-widget">
+                <div class="widget-header">Погода</div>
+                <div class="widget-content">
+                    <p><strong>Москва:</strong> +5°C, облачно</p>
+                    <p><strong>Санкт-Петербург:</strong> 0°C, снег</p>
+                    <p><strong>Екатеринбург:</strong> -3°C, ясно</p>
+        </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-content">
+            <div class="logo" style="font-size: 24px;">НОВОСТИ<span>.RU</span></div>
+            <ul class="footer-links">
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Реклама</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Архив</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+            </ul>
+            <div class="copyright">
+                © 2023 НОВОСТИ.RU - Все права защищены. Использование материалов возможно только с письменного разрешения редакции.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const victims = [
+            "Иван Петров",
+            "Мария Сидорова", 
+            "Александр Кузнецов",
+            "Елена Волкова",
+            "Дмитрий Морозов",
+            "Ольга Михайлова",
+            "Сергей Попов",
+            "Анна Лебедева",
+            "Виктор Смирнов",
+            "Наталья Орлова"
+        ];
+        
+        let currentIndex = 0;
+        const victimDisplay = document.getElementById('victim-name');
+        
+        function updateVictim() {
+            victimDisplay.textContent = victims[currentIndex];
+            victimDisplay.style.backgroundColor = '';
+            victimDisplay.style.color = '#333';
+            
+            setTimeout(() => {
+                victimDisplay.innerHTML = '<div class="eliminated">ликвидировано</div>';
+                
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % victims.length;
+                    updateVictim();
+                }, 1000);
+            }, 1000);
+        }
+        
+        updateVictim();
+    </script>
+</body>
+</html>
